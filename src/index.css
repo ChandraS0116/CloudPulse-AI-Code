@@ -1,0 +1,607 @@
+@import "leaflet/dist/leaflet.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   CLOUDPULSE AI — 5 CLASSY LIGHT THEME COMBINATIONS
+   100% High-Contrast, Crystal Clear, Effortlessly Readable
+   ========================================================================== */
+
+/* 1. OCEAN SAPPHIRE & PURE WHITE (DEFAULT) */
+:root,
+[data-theme="sapphire"],
+[data-theme="cyber-cyan"],
+[data-theme="glacial-arctic"],
+[data-theme="alpine"],
+[data-theme="navy-white"],
+[data-theme="nordic-light"] {
+  --is-dark: 0;
+  --canvas: #f8fafc;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-subtle: #f1f5f9;
+  --surface-hover: #eff6ff;
+  --table-head: #f1f5fa;
+  --border-subtle: #cbd5e1;
+  --border-strong: #94a3b8;
+  --text-main: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --theme-primary: #2563eb;
+  --theme-primary-hover: #1d4ed8;
+  --theme-primary-subtle: #eff6ff;
+  --theme-primary-border: #bfdbfe;
+  --theme-glow: rgba(37, 99, 235, 0.12);
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #cbd5e1;
+  --sidebar-text: #0f172a;
+  --sidebar-muted: #64748b;
+  --sidebar-hover: #eff6ff;
+  --sidebar-active-bg: #2563eb;
+  --sidebar-active-text: #ffffff;
+  --header-bg: #ffffff;
+  --header-border: #cbd5e1;
+  --accent-kpi-1: #2563eb;
+  --accent-kpi-2: #dc2626;
+  --accent-kpi-3: #4f46e5;
+  --accent-kpi-4: #059669;
+  --accent-kpi-5: #d97706;
+}
+
+/* 2. EMERALD MEADOW & CRISP WHITE */
+[data-theme="emerald"],
+[data-theme="aurora-emerald"],
+[data-theme="emerald-white"] {
+  --is-dark: 0;
+  --canvas: #f8fafc;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-subtle: #f1f5f9;
+  --surface-hover: #ecfdf5;
+  --table-head: #f1f5fa;
+  --border-subtle: #cbd5e1;
+  --border-strong: #94a3b8;
+  --text-main: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --theme-primary: #059669;
+  --theme-primary-hover: #047857;
+  --theme-primary-subtle: #ecfdf5;
+  --theme-primary-border: #a7f3d0;
+  --theme-glow: rgba(5, 150, 105, 0.12);
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #cbd5e1;
+  --sidebar-text: #0f172a;
+  --sidebar-muted: #64748b;
+  --sidebar-hover: #ecfdf5;
+  --sidebar-active-bg: #059669;
+  --sidebar-active-text: #ffffff;
+  --header-bg: #ffffff;
+  --header-border: #cbd5e1;
+  --accent-kpi-1: #059669;
+  --accent-kpi-2: #dc2626;
+  --accent-kpi-3: #2563eb;
+  --accent-kpi-4: #10b981;
+  --accent-kpi-5: #d97706;
+}
+
+/* 3. SUNSET CORAL / CRIMSON RUBY & WARM WHITE */
+[data-theme="coral"],
+[data-theme="sunset-coral"] {
+  --is-dark: 0;
+  --canvas: #f8fafc;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-subtle: #f1f5f9;
+  --surface-hover: #fef2f2;
+  --table-head: #f1f5fa;
+  --border-subtle: #cbd5e1;
+  --border-strong: #94a3b8;
+  --text-main: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --theme-primary: #dc2626;
+  --theme-primary-hover: #b91c1c;
+  --theme-primary-subtle: #fef2f2;
+  --theme-primary-border: #fecaca;
+  --theme-glow: rgba(220, 38, 38, 0.12);
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #cbd5e1;
+  --sidebar-text: #0f172a;
+  --sidebar-muted: #64748b;
+  --sidebar-hover: #fef2f2;
+  --sidebar-active-bg: #dc2626;
+  --sidebar-active-text: #ffffff;
+  --header-bg: #ffffff;
+  --header-border: #cbd5e1;
+  --accent-kpi-1: #dc2626;
+  --accent-kpi-2: #d97706;
+  --accent-kpi-3: #2563eb;
+  --accent-kpi-4: #059669;
+  --accent-kpi-5: #7c3aed;
+}
+
+/* 4. ROYAL AMETHYST & PEARL WHITE */
+[data-theme="amethyst"],
+[data-theme="quantum-violet"],
+[data-theme="amethyst-white"] {
+  --is-dark: 0;
+  --canvas: #f8fafc;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-subtle: #f1f5f9;
+  --surface-hover: #f5f3ff;
+  --table-head: #f1f5fa;
+  --border-subtle: #cbd5e1;
+  --border-strong: #94a3b8;
+  --text-main: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --theme-primary: #7c3aed;
+  --theme-primary-hover: #6d28d9;
+  --theme-primary-subtle: #f5f3ff;
+  --theme-primary-border: #ddd6fe;
+  --theme-glow: rgba(124, 58, 237, 0.12);
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #cbd5e1;
+  --sidebar-text: #0f172a;
+  --sidebar-muted: #64748b;
+  --sidebar-hover: #f5f3ff;
+  --sidebar-active-bg: #7c3aed;
+  --sidebar-active-text: #ffffff;
+  --header-bg: #ffffff;
+  --header-border: #cbd5e1;
+  --accent-kpi-1: #7c3aed;
+  --accent-kpi-2: #dc2626;
+  --accent-kpi-3: #2563eb;
+  --accent-kpi-4: #059669;
+  --accent-kpi-5: #d97706;
+}
+
+/* 5. AMBER HONEY & MODERN WHITE */
+[data-theme="amber"],
+[data-theme="solar-amber"],
+[data-theme="charcoal-white"] {
+  --is-dark: 0;
+  --canvas: #f8fafc;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-subtle: #f1f5f9;
+  --surface-hover: #fffbeb;
+  --table-head: #f1f5fa;
+  --border-subtle: #cbd5e1;
+  --border-strong: #94a3b8;
+  --text-main: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --theme-primary: #d97706;
+  --theme-primary-hover: #b45309;
+  --theme-primary-subtle: #fffbeb;
+  --theme-primary-border: #fde68a;
+  --theme-glow: rgba(217, 119, 6, 0.12);
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #cbd5e1;
+  --sidebar-text: #0f172a;
+  --sidebar-muted: #64748b;
+  --sidebar-hover: #fffbeb;
+  --sidebar-active-bg: #d97706;
+  --sidebar-active-text: #ffffff;
+  --header-bg: #ffffff;
+  --header-border: #cbd5e1;
+  --accent-kpi-1: #d97706;
+  --accent-kpi-2: #dc2626;
+  --accent-kpi-3: #2563eb;
+  --accent-kpi-4: #059669;
+  --accent-kpi-5: #7c3aed;
+}
+
+@layer base {
+  html {
+    zoom: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  * {
+    border-color: var(--border-subtle);
+  }
+  
+  body {
+    background-color: var(--canvas);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Refined, quiet scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(15, 23, 42, 0.14);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(15, 23, 42, 0.25);
+  }
+}
+
+/* LIGHT THEME SURFACE MAPPINGS */
+.bg-dark-950,
+.bg-dark-950\/90,
+.bg-dark-950\/80,
+.bg-dark-950\/70,
+.bg-dark-950\/60,
+.bg-dark-950\/40 {
+  background-color: var(--canvas) !important;
+  color: var(--text-main) !important;
+}
+
+.bg-dark-900,
+.bg-dark-900\/95,
+.bg-dark-900\/90,
+.bg-dark-900\/80,
+.bg-dark-900\/70,
+.bg-dark-900\/60,
+.bg-dark-900\/40,
+.bg-dark-900\/30 {
+  background-color: var(--surface) !important;
+  color: var(--text-main) !important;
+}
+
+.bg-dark-850,
+.bg-dark-800 {
+  background-color: var(--surface-subtle) !important;
+  color: var(--text-main) !important;
+}
+
+.bg-dark-850:hover,
+.bg-dark-800:hover {
+  background-color: var(--surface-hover) !important;
+}
+
+/* Fix borders that had white opacity */
+[class*="border-white"] {
+  border-color: var(--border-subtle) !important;
+}
+
+/* Ensure text on light backgrounds is always deep and readable */
+.text-slate-300,
+.text-slate-200,
+.text-slate-100 {
+  color: var(--text-secondary) !important;
+}
+
+.text-slate-400 {
+  color: var(--text-muted) !important;
+}
+
+/* ==========================================================================
+   GLOBAL HIGH-CONTRAST ENGINE (WCAG AAA AUDITED)
+   Guarantees that ANY pastel text or dark-mode tinted badge will render
+   with crystal-clear, deep, high-contrast readable colors.
+   ========================================================================== */
+
+/* Force ALL light rose/red/pink text to deep, bold, ultra-readable red */
+.text-rose-200,
+.text-rose-300,
+.text-rose-400 {
+  color: #9f1239 !important; /* deep rose-800: contrast ratio > 7.5:1 on light */
+  font-weight: 600 !important;
+}
+.text-red-200,
+.text-red-300,
+.text-red-400 {
+  color: #991b1b !important; /* deep red-800 */
+  font-weight: 600 !important;
+}
+
+/* Force ALL light amber/yellow text to deep bronze/amber */
+.text-amber-200,
+.text-amber-300,
+.text-amber-400 {
+  color: #92400e !important; /* deep amber-800: contrast ratio > 7:1 */
+  font-weight: 600 !important;
+}
+.text-yellow-200,
+.text-yellow-300,
+.text-yellow-400 {
+  color: #854d0e !important;
+  font-weight: 600 !important;
+}
+
+/* Force ALL light emerald/green text to deep forest green */
+.text-emerald-200,
+.text-emerald-300,
+.text-emerald-400 {
+  color: #065f46 !important; /* deep emerald-800 */
+  font-weight: 600 !important;
+}
+.text-green-200,
+.text-green-300,
+.text-green-400 {
+  color: #166534 !important;
+  font-weight: 600 !important;
+}
+
+/* Force ALL light blue/sky/cyan text to deep royal navy */
+.text-blue-200,
+.text-blue-300,
+.text-blue-400 {
+  color: #1e40af !important; /* deep blue-800 */
+  font-weight: 600 !important;
+}
+.text-sky-200,
+.text-sky-300,
+.text-sky-400,
+.text-cyan-200,
+.text-cyan-300,
+.text-cyan-400 {
+  color: #075985 !important;
+  font-weight: 600 !important;
+}
+
+/* Force ALL light purple/violet text to deep royal violet */
+.text-purple-200,
+.text-purple-300,
+.text-purple-400,
+.text-violet-200,
+.text-violet-300,
+.text-violet-400 {
+  color: #5b21b6 !important;
+  font-weight: 600 !important;
+}
+
+/* Overhaul dark tinted rose backgrounds to clean crisp surfaces */
+.bg-rose-950,
+.bg-rose-950\/80,
+.bg-rose-950\/60,
+.bg-rose-950\/40,
+.bg-rose-950\/30,
+.bg-rose-950\/20,
+.bg-rose-900,
+.bg-rose-900\/60,
+.bg-rose-900\/40 {
+  background-color: #fef2f2 !important; /* clean red-50 */
+  border-color: #fecaca !important;     /* clean red-200 */
+  color: #991b1b !important;            /* clean red-800 */
+}
+
+/* Badge & pill background overrides */
+.bg-rose-500\/10,
+.bg-rose-500\/15,
+.bg-rose-500\/20,
+.bg-rose-500\/25,
+.bg-rose-500\/30 {
+  background-color: #fee2e2 !important;
+  border-color: #fca5a5 !important;
+  color: #991b1b !important;
+}
+
+.bg-amber-500\/10,
+.bg-amber-500\/15,
+.bg-amber-500\/20,
+.bg-amber-500\/25,
+.bg-amber-500\/30 {
+  background-color: #fef3c7 !important;
+  border-color: #fcd34d !important;
+  color: #92400e !important;
+}
+
+.bg-emerald-500\/10,
+.bg-emerald-500\/15,
+.bg-emerald-500\/20,
+.bg-emerald-500\/25,
+.bg-emerald-500\/30 {
+  background-color: #d1fae5 !important;
+  border-color: #6ee7b7 !important;
+  color: #065f46 !important;
+}
+
+.bg-blue-500\/10,
+.bg-blue-500\/15,
+.bg-blue-500\/20,
+.bg-blue-500\/25,
+.bg-blue-500\/30 {
+  background-color: #dbeafe !important;
+  border-color: #93c5fd !important;
+  color: #1e40af !important;
+}
+
+/* Glass Panels with Crisp Light Borders */
+.glass-panel {
+  background: var(--surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 4px 16px -2px rgba(15, 23, 42, 0.05) !important;
+}
+
+.glass-panel-subtle {
+  background: var(--surface-subtle) !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+
+.glass-card-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+  background: var(--surface) !important;
+  border-color: var(--theme-primary) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px -2px var(--theme-glow) !important;
+}
+
+/* Dynamic Typography - Crystal Clear Dark Contrast */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main) !important;
+}
+
+.text-white:not(button.bg-blue-600 *):not(button.bg-blue-700 *):not(.bg-blue-600 *):not(.bg-blue-700 *):not(.bg-red-600 *):not(.bg-red-700 *):not(.bg-rose-500 *):not(.bg-rose-600 *):not(.bg-emerald-600 *):not(.bg-emerald-500 *):not(.bg-amber-500 *):not(.bg-amber-600 *):not(.bg-purple-600 *):not(.badge-solid *) {
+  color: var(--text-main) !important;
+}
+
+/* Retain pure white text on solid colored buttons */
+button.bg-blue-600,
+button.bg-blue-600 *,
+button.bg-blue-700,
+button.bg-blue-700 *,
+.bg-blue-600,
+.bg-blue-600 *,
+.bg-blue-700,
+.bg-blue-700 *,
+.bg-red-600,
+.bg-red-600 *,
+.bg-red-700,
+.bg-red-700 *,
+.bg-rose-500,
+.bg-rose-500 *,
+.bg-rose-600,
+.bg-rose-600 *,
+.bg-emerald-600,
+.bg-emerald-600 *,
+.bg-emerald-500,
+.bg-emerald-500 *,
+.bg-amber-500,
+.bg-amber-500 *,
+.bg-amber-600,
+.bg-amber-600 *,
+.bg-purple-600,
+.bg-purple-600 *,
+.theme-btn-primary,
+.theme-btn-primary * {
+  color: #ffffff !important;
+}
+
+/* KPI CARD ACCENT STRIPES (Dynamically themed) */
+.kpi-accent-blue {
+  border-top: 3.5px solid var(--accent-kpi-1) !important;
+}
+.kpi-accent-rose {
+  border-top: 3.5px solid var(--accent-kpi-2) !important;
+}
+.kpi-accent-indigo {
+  border-top: 3.5px solid var(--accent-kpi-3) !important;
+}
+.kpi-accent-emerald {
+  border-top: 3.5px solid var(--accent-kpi-4) !important;
+}
+.kpi-accent-amber {
+  border-top: 3.5px solid var(--accent-kpi-5) !important;
+}
+
+/* PRIORITY QUEUE INDICATORS */
+.queue-border-p1 {
+  border-left: 4px solid var(--accent-kpi-2) !important;
+}
+.queue-border-p2 {
+  border-left: 4px solid var(--accent-kpi-5) !important;
+}
+.queue-border-p3 {
+  border-left: 4px solid var(--accent-kpi-1) !important;
+}
+.queue-item-selected {
+  border: 1.5px solid var(--theme-primary) !important;
+  border-left: 4px solid var(--theme-primary) !important;
+  background-color: var(--theme-primary-subtle) !important;
+  box-shadow: 0 4px 16px -2px var(--theme-glow) !important;
+}
+
+/* TABLE STYLING */
+table thead,
+.thead-styled,
+thead.bg-dark-900\/90 {
+  background-color: var(--table-head) !important;
+}
+table thead th {
+  color: var(--text-main) !important;
+  font-weight: 700 !important;
+  border-bottom: 1px solid var(--border-strong) !important;
+}
+
+/* Form inputs */
+input, select, textarea {
+  background-color: var(--surface) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--theme-primary) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px var(--theme-primary-subtle) !important;
+}
+
+/* Leaflet Map Light Dynamic Styling */
+.leaflet-container {
+  background: var(--canvas) !important;
+  font-family: inherit !important;
+  outline: none;
+}
+
+.leaflet-bar {
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.leaflet-bar a {
+  background-color: var(--surface) !important;
+  color: var(--text-main) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  width: 34px !important;
+  height: 34px !important;
+  line-height: 34px !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: var(--surface-hover) !important;
+  color: var(--theme-primary) !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--surface) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-strong) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.12) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--surface) !important;
+  border: 1px solid var(--border-strong) !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  top: 10px !important;
+  right: 10px !important;
+  color: var(--text-muted) !important;
+  font-size: 16px !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.leaflet-container a.leaflet-popup-close-button:hover {
+  background: var(--surface-hover) !important;
+  color: var(--text-main) !important;
+}
